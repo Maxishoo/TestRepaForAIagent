@@ -63,6 +63,7 @@ def repl():
     print("Simple Calculator REPL")
     print("Enter an expression to evaluate, or 'exit'/'quit' to stop.")
     print("Supported: +, -, *, /, //, %, **, parentheses, unary +/-")
+    print("-" * 50)
     while True:
         try:
             expr = input("calc> ").strip()
@@ -79,7 +80,9 @@ def repl():
             # Print as integer if result is integral
             if isinstance(result, float) and result.is_integer():
                 result = int(result)
-            print(result)
+            print("\n" + "="*50)
+            print(f"Result: {result}")
+            print("="*50 + "\n")
         except Exception as e:
             print(f"Error: {e}")
 
@@ -101,6 +104,7 @@ A small, safe calculator implemented in Python that reads arithmetic expressions
   - Division by zero (including `//` and `%`)
   - Unsupported characters or constructs
 - Clean exit via `exit`, `quit`, `Ctrl+D`, or `Ctrl+C`
+- Formatted output with headers and separators for clarity
 
 ## Usage
 
@@ -114,17 +118,35 @@ Then type expressions at the prompt:
 
 ```
 calc> 2 + 3 * 4
-14
+==================================================
+Result: 14
+==================================================
+
 calc> (10 - 3) ** 2
-49
+==================================================
+Result: 49
+==================================================
+
 calc> -5 + 8
-3
+==================================================
+Result: 3
+==================================================
+
 calc> 10 / 3
-3.3333333333333335
+==================================================
+Result: 3.3333333333333335
+==================================================
+
 calc> 10 // 3
-3
+==================================================
+Result: 3
+==================================================
+
 calc> 10 % 3
-2
+==================================================
+Result: 2
+==================================================
+
 calc> exit
 Goodbye!
 ```
@@ -143,3 +165,4 @@ Goodbye!
 ## License
 
 This code is placed in the public domain; feel free to modify and reuse it as you wish.
+<<<END FILE>>>
